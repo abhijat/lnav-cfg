@@ -1,1 +1,0 @@
-# lnav-cfg
