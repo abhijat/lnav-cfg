@@ -23,10 +23,17 @@
 			"kind": "string"
 		},
 		"src": {
-			"kind": "string"
+			"kind": "string",
+			"identifier": true
 		},
 		"timestamp": {
 			"kind": "string"
+		}
+	},
+	"highlights": {
+		"ntp": {
+			"pattern": "((kafka|redpanda)\\/.*?\\/\\d+)",
+			"underline": true
 		}
 	},
 	"sample": [
