@@ -1,0 +1,43 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "redpanda": {
+        "description": "Format file generated from regex101 entry -- https://regex101.com/r/yDdr8d/3",
+        "regex": {
+            "std": {
+		    "pattern": "(?<level>\\w+)\\s+(?<timestamp>\\d{4}-\\d{2}-\\d{2}\\s[^\\s]*)\\s+(?<shard>\\[.*?\\])\\s+(?<src>[^\\s]*)\\s+(?<body>.*)"
+	    }
+	},
+	"level-field": "level",
+	"level": {
+		"warning": "WARN",
+		"error": "ERROR",
+		"trace": "TRACE",
+		"info": "INFO",
+		"debug": "DEBUG"
+	},
+	"value": {
+		"level": {
+			"kind": "string"
+		},
+		"shard": {
+			"kind": "string"
+		},
+		"src": {
+			"kind": "string"
+		},
+		"timestamp": {
+			"kind": "string"
+		}
+	},
+	"sample": [
+		{
+			"line": "TRACE 2022-07-08 11:17:27,610 [shard 1] raft - [group_id:4, {kafka/panda-topic-2/1}] consensus.cc:3075 - should_reconnect_follower({id: {2}, revision: {18}}): 0/3 fails, last ok 150ms ago",
+			"level": "trace"
+		}, 
+		{
+			"line": "WARN  2022-07-08 11:17:17,346 [shard 0] seastar - Unable to set SCHED_FIFO scheduling policy for timer thread; latency impact possible. Try adding CAP_SYS_NICE",
+			"level": "warning"
+		}
+	]
+    }
+}
