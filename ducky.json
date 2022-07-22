@@ -1,0 +1,37 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "ducky": {
+        "description": "Format file generated from regex101 entry -- https://regex101.com/r/jqp6cw/1",
+        "regex": {
+            "std": {
+                "pattern": "\\[(?<level>\\w+)\\s+-\\s+(?<timestamp>\\d{4}-\\d{2}-\\d{2} [^\\s]+)(?<body>.*)"
+            }
+        },
+        "value": {
+            "level": {
+                "kind": "string"
+            },
+            "timestamp": {
+                "kind": "string"
+            }
+        },
+	"highlights": {
+	    "module": {
+	        "pattern": "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2},\\d{3} - (.*?) -"
+	    },
+	    "src": {
+	        "pattern": "(\\w+ - lineno:\\d+)"
+	    }
+	},
+        "sample": [
+            {
+                "line": "[INFO  - 2022-07-22 05:04:39,102 - topic_recovery_test - _stop_redpanda_nodes - lineno:1156]: Node docker-rp-1 will be stopped",
+		"level": "info"
+            },
+            {
+                "line": "[WARNING - 2022-07-22 05:04:27,945 - topic_recovery_test - _verify_file_layout - lineno:186]: orig_ntp_size 5282984 ... rest_ntp_size 5282532 ... tolerance 455 ... size_override 1024 ... delta 452",
+		"level": "warning"
+            }
+        ]
+    }
+}
